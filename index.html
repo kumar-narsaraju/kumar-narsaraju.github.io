@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kumar Narsaraju | Systems Engineer · Data Center & GPU Servers</title>
+<meta name="description" content="Systems Engineer specialising in ASUS H100 GPU servers, NVIDIA switches, Linux, RAID and BMC in large-scale data centers.">
+<style>
+:root{--bg:#0b0f14;--card:#121821;--line:#1f2937;--tx:#e6edf3;--mu:#8b98a9;--ac:#3fb950;--bl:#58a6ff}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;-webkit-text-size-adjust:100%}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:0;z-index:5;background:rgba(11,15,20,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:20px;height:56px;overflow-x:auto;white-space:nowrap}
+nav b{color:var(--ac)}
+nav a{color:var(--mu);font-size:14px}nav a:hover{color:var(--tx)}
+section{padding:56px 0 8px}
+h2{font-size:22px;margin-bottom:20px}
+h2::before{content:"// ";color:var(--ac)}
+.hero{padding:72px 0 24px}
+.led{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--ac);margin-right:6px;animation:b 1.6s infinite}
+.led:nth-child(2){background:#f0883e;animation-delay:.4s}.led:nth-child(3){background:var(--bl);animation-delay:.8s}
+@keyframes b{50%{opacity:.2}}
+h1{font-size:clamp(32px,7vw,54px);line-height:1.1;margin:14px 0 8px}
+.role{color:var(--ac);font-size:clamp(14px,3.5vw,18px)}
+.lead{color:var(--mu);max-width:720px;margin:16px 0 24px}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{padding:10px 16px;border:1px solid var(--line);border-radius:8px;background:var(--card);font-size:14px;transition:.2s}
+.btn:hover{border-color:var(--ac)}
+.btn.p{background:var(--ac);color:#04130a;border-color:var(--ac);font-weight:600}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:36px}
+.stat,.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px}
+.stat b{display:block;font-size:28px;color:var(--ac)}
+.stat span{color:var(--mu);font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+.card h3{font-size:16px;margin-bottom:6px}
+.card p,.card li{color:var(--mu);font-size:14px}
+.card ul{padding-left:18px}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tag{padding:5px 12px;border:1px solid var(--line);border-radius:99px;font-size:13px;color:var(--mu);background:var(--card)}
+.job{border-left:2px solid var(--ac);padding-left:18px}
+.job small{color:var(--bl)}
+.job li{margin:6px 0;color:var(--mu);font-size:14.5px}
+.res{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between}
+footer{margin-top:64px;padding:24px 0;border-top:1px solid var(--line);color:var(--mu);font-size:13px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between}
+footer a:hover{color:var(--tx)}
+@media(prefers-reduced-motion:reduce){.led{animation:none}}
+
+.vw{display:grid;grid-template-columns:1.6fr 1fr;gap:16px}
+#gl{height:450px;border:1px solid var(--line);border-radius:12px;background:radial-gradient(circle at 50% 40%,#16202c,#0b0f14);position:relative;overflow:hidden;touch-action:pan-y;cursor:grab}
+#gl canvas{display:block;width:100%;height:100%}
+.leg{display:grid;gap:8px;align-content:start}
+.leg button,.leg .btn{font:inherit;cursor:pointer;display:flex;gap:10px;align-items:center;padding:9px 12px;background:var(--card);border:1px solid var(--line);border-radius:8px;font-size:13.5px;color:var(--mu);text-align:left}
+.leg button:hover,.leg button:focus-visible{border-color:var(--ac);color:var(--tx);outline:none}
+.leg i{width:10px;height:10px;border-radius:3px;flex:none}
+.leg .btn{justify-content:center;color:#04130a;background:var(--ac);font-weight:600}
+.hint{color:var(--mu);font-size:12px;margin-top:8px}
+.svgw{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px;overflow-x:auto;margin-bottom:16px}
+.svgw h3{font-size:15px;margin:4px 6px 8px}
+.svgw svg{width:100%;height:auto;min-width:560px;display:block}
+svg text{fill:#c9d4e0;font:12px ui-monospace,Menlo,Consolas,monospace}
+svg .sm{font-size:10px;fill:#8b98a9}
+svg path{fill:none;stroke-width:1.6}
+.bx{fill:#0f151d;stroke:#2a3441;stroke-width:1.4}.bx.g{stroke:#3fb950}.bx.b{stroke:#58a6ff;fill:#0d1f33}.bx.or{stroke:#f0883e}
+.dash{stroke-dasharray:6 6;animation:fl 1s linear infinite}
+@keyframes fl{to{stroke-dashoffset:-12}}
+.gy{stroke:#4b5563}.gr{stroke:#3fb950}.bl{stroke:#58a6ff}.or2{stroke:#f0883e}
+@media(max-width:760px){.vw{grid-template-columns:1fr}#gl{height:310px}}
+@media(prefers-reduced-motion:reduce){.dash{animation:none}}
+nav a,.btn,.leg button{text-transform:capitalize}</style>
+</head>
+<body>
+<nav><div class="wrap mono"><b>KN@dc:~$</b><a href="#about">About</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#certs">Certifications</a><a href="#resume">Resume</a><a href="#connect">Connect</a></div></nav>
+
+<header class="hero"><div class="wrap">
+<div><i class="led"></i><i class="led"></i><i class="led"></i><span class="mono" style="color:var(--mu);font-size:13px"> Status: Online · Open To Server Engineer Roles</span></div>
+<h1>Kumar Narsaraju</h1>
+<p class="role mono">Systems Engineer · Data Center &amp; GPU Infrastructure</p>
+<p class="lead">I mount, configure and keep large fleets of high-performance servers healthy. Over 2.5 years in data centers, including 513 ASUS H100 GPU servers and 500+ NVIDIA switches, with Linux, RAID, BMC remote diagnostics and hardware troubleshooting as my daily tools.</p>
+<div class="btns">
+<a class="btn p" href="resume.pdf" download>Download Resume</a>
+<a class="btn" href="#connect">Get In Touch</a>
+</div>
+<div class="stats">
+<div class="stat"><b>513</b><span>ASUS H100 servers supported</span></div>
+<div class="stat"><b>500+</b><span>NVIDIA switches installed</span></div>
+<div class="stat"><b>2.5+</b><span>Years in server engineering</span></div>
+</div>
+</div></header>
+
+<main class="wrap">
+<section id="gpu"><h2>ASUS ESC N8-E11: Inside The Server</h2>
+<div class="vw"><div><div id="gl"></div><p class="hint mono">7U · 8× H100 SXM5 · Dual Xeon · 32 DIMM · 8 Front NVMe · 4+2 PSU. Drag to rotate, tap a part to isolate it.</p></div>
+<div class="leg" id="leg">
+<button data-p="gpu"><i style="background:#3fb950"></i>8× NVIDIA H100 SXM5 GPUs</button>
+<button data-p="sw"><i style="background:#58a6ff"></i>4× NVSwitch (NVLink 900 GB/s)</button>
+<button data-p="cpu"><i style="background:#c0c8d0"></i>Dual Intel Xeon CPUs</button>
+<button data-p="mem"><i style="background:#2563a8"></i>32× DDR5 DIMM Slots</button>
+<button data-p="nic"><i style="background:#22b8cf"></i>8× NICs (1 GPU : 1 NIC)</button>
+<button data-p="fan"><i style="background:#9aa7b5"></i>Front Fan Wall</button>
+<button data-p="nvme"><i style="background:#f0883e"></i>8× Front NVMe Bays</button>
+<button data-p="psu"><i style="background:#a371f7"></i>6× PSU (4+2 Titanium)</button>
+<button class="btn" id="ex">Explode / Assemble</button></div></div></section>
+
+<section id="arch"><h2>Architecture</h2>
+<div class="svgw"><h3 class="mono">GPU cluster: head node, switches, worker nodes</h3>
+<svg viewBox="0 0 800 345" role="img" aria-label="GPU cluster architecture diagram">
+<path class="dash bl" d="M400 54V87H285V120M400 87H515V120M370 140H430M285 160V205H115V250M285 205H305V250M515 160V205H495V250M515 205H685V250"/>
+<path class="dash or2" d="M105 54V228H685M105 228V250M305 228V250M495 228V250M685 228V250"/>
+<rect class="bx or" x="20" y="10" width="170" height="44" rx="8"/><text x="105" y="36" text-anchor="middle">Admin · BMC / IPMI</text>
+<rect class="bx g" x="330" y="10" width="140" height="44" rx="8"/><text x="400" y="36" text-anchor="middle">HEAD NODE</text>
+<rect class="bx b" x="200" y="120" width="170" height="40" rx="8"/><text x="285" y="145" text-anchor="middle">NVIDIA Switch</text>
+<rect class="bx b" x="430" y="120" width="170" height="40" rx="8"/><text x="515" y="145" text-anchor="middle">NVIDIA Switch</text>
+<g id="wk"></g>
+<path class="bl" d="M20 330H50"/><text x="58" y="334" class="sm">Compute fabric (InfiniBand / Ethernet)</text>
+<path class="or2" d="M330 330H360"/><text x="368" y="334" class="sm">Management network (BMC / IPMI)</text>
+</svg></div>
+<div class="svgw"><h3 class="mono">Inside one node: GPUs, NVSwitch and I/O</h3>
+<svg id="nsv" viewBox="0 0 800 290" role="img" aria-label="GPU node internal diagram"></svg></div></section>
+
+<section id="about"><h2>About</h2>
+<div class="card"><p>Self-motivated IT professional experienced in rack stacking, operating system installation, RAID configuration, server hardware troubleshooting and network component deployment. I have practical exposure to InfiniBand and BF3 card technologies, and I use AI tools like ChatGPT and Gemini to speed up workflows and solve technical problems. B.Sc. in Visual Communication, KL University (2021).</p></div></section>
+
+<section id="experience"><h2>Experience</h2>
+<div class="job">
+<h3>System Engineer – Technical Infrastructure</h3>
+<small class="mono">Aapt TeknoUS · April 2024 – Present</small>
+<ul>
+<li>Mounted and configured ASUS H100 AI supercomputing 7U servers and installed 500+ NVIDIA switches.</li>
+<li>Monitor 513 Linux-based ASUS H100 servers with full control access.</li>
+<li>Hardware troubleshooting, replacements, RAID setup, and OS and network configuration to client requirements.</li>
+<li>After-sales support for ASUS products: regular health checks and server-hall temperature monitoring.</li>
+<li>Remote diagnostics and access using BMC and other remote tools.</li>
+<li>Maintain documentation for server inventory, configurations and SOPs.</li>
+</ul>
+<div class="grid" style="margin-top:16px">
+<div class="card"><h3>Client: OneXtel</h3><p>Dell enterprise server troubleshooting and hardware replacement, switch installation, OS installs and network configuration.</p></div>
+<div class="card"><h3>Client: Experian</h3><p>Planned switch upgrade with higher-speed SFP connections to database servers for better performance and throughput.</p></div>
+</div></div></section>
+
+<section id="skills"><h2>Skills</h2>
+<div class="tags" id="skillTags"></div></section>
+
+<section id="certs"><h2>Certifications</h2>
+<div class="grid" id="certGrid"></div>
+<p style="margin-top:14px"><a class="btn" id="certLink" target="_blank" rel="noopener">View All On LinkedIn ↗</a></p></section>
+
+<section id="resume"><h2>Resume</h2>
+<div class="card res"><div><h3>Kumar Narsaraju – Resume (PDF)</h3><p>Always the latest version.</p></div>
+<div class="btns"><a class="btn" href="resume.pdf" target="_blank" rel="noopener">View</a><a class="btn p" href="resume.pdf" download>Download</a></div></div></section>
+
+<section id="connect"><h2>Connect</h2>
+<div class="btns" id="links"></div></section>
+</main>
+
+<footer><div class="wrap"><span>© <span id="yr"></span> Kumar Narsaraju</span><a id="admin" target="_blank" rel="noopener" title="Owner only: needs your GitHub login">Update Resume (Owner)</a></div></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+/* ===== EDIT THIS BLOCK TO UPDATE THE SITE ===== */
+const SITE={
+ email:"kumarnarsaraju2@gmail.com",
+ links:[ /* leave url "" to hide a link; fill it in later */
+  {name:"LinkedIn",url:"https://www.linkedin.com/in/kumar-narsaraju-71478928a/"},
+  {name:"GitHub",url:"https://github.com/kumar-narsaraju"},
+  {name:"Naukri",url:""},
+  {name:"Behance",url:"https://www.behance.net/kumarnarsaraju"}
+ ],
+ certsPage:"https://www.linkedin.com/in/kumar-narsaraju-71478928a/details/certifications/",
+ /* add certificates like: {name:"Certificate name", issuer:"Issuer", year:"2025"} */
+ certs:[],
+ skills:["Linux","Server Installation & Configuration","Server Troubleshooting","RAID Setup & Management","Rack Stacking","BMC / IPMI","NVIDIA Switches","ASUS H100 GPU Servers","Dell PowerEdge","InfiniBand & BF3 (exposure)","Bash Automation","AI Tools for IT Support"],
+ repo:"kumar-narsaraju/kumar-narsaraju.github.io"
+};
+/* ============================================== */
+const $=id=>document.getElementById(id);
+$("skillTags").innerHTML=SITE.skills.map(s=>`<span class="tag">${s}</span>`).join("");
+$("certLink").href=SITE.certsPage;
+$("certGrid").innerHTML=SITE.certs.length?SITE.certs.map(c=>`<div class="card"><h3>${c.name}</h3><p>${c.issuer||""} ${c.year?"· "+c.year:""}</p></div>`).join(""):`<div class="card"><h3>Verified certifications</h3><p>My completed certifications and credentials are listed on my LinkedIn profile.</p></div>`;
+$("links").innerHTML=SITE.links.filter(l=>l.url).map(l=>`<a class="btn" href="${l.url}" target="_blank" rel="noopener">${l.name} ↗</a>`).join("")+`<a class="btn p" href="mailto:${SITE.email}">Email Me</a>`;
+$("admin").href=`https://github.com/${SITE.repo}/upload/main`;
+$("yr").textContent=new Date().getFullYear();
+</script>
+<script>
+(function(){
+let h='';for(let i=0;i<4;i++){const x=40+i*190;h+=`<rect class="bx g" x="${x}" y="250" width="150" height="62" rx="8"/><text x="${x+75}" y="276" text-anchor="middle">WORKER NODE ${i+1}</text><text x="${x+75}" y="296" text-anchor="middle" class="sm">8× H100 · Linux</text>`}
+document.getElementById('wk').innerHTML=h;
+const X=i=>60+i*88;h='<rect class="bx" x="250" y="8" width="120" height="36" rx="6"/><text x="310" y="31" text-anchor="middle">CPU 1</text><rect class="bx" x="430" y="8" width="120" height="36" rx="6"/><text x="490" y="31" text-anchor="middle">CPU 2</text><path class="dash gy" d="M370 26H430"/>';
+for(let i=0;i<8;i++){const cx=X(i)+39,sx=i<4?310:490;
+h+=`<path class="dash gy" d="M${sx} 44V70H${cx}V100"/><rect class="bx g" x="${X(i)}" y="100" width="78" height="46" rx="6"/><text x="${cx}" y="120" text-anchor="middle">H100</text><text x="${cx}" y="136" text-anchor="middle" class="sm">GPU ${i}</text><path class="dash gr" d="M${cx} 146V176"/>`}
+h+='<rect class="bx b" x="60" y="176" width="694" height="34" rx="6"/><text x="407" y="198" text-anchor="middle">4× NVSwitch · NVLink all-to-all (900 GB/s per GPU)</text><rect class="bx" x="60" y="238" width="330" height="34" rx="6"/><text x="225" y="260" text-anchor="middle">NICs · ConnectX-7 / BlueField-3</text><rect class="bx" x="424" y="238" width="330" height="34" rx="6"/><text x="589" y="260" text-anchor="middle">NVMe storage · BMC management</text>';
+document.getElementById('nsv').innerHTML=h})();
+
+(function(){
+const box=document.getElementById('gl');if(!window.THREE||!box)return;
+let R;try{R=new THREE.WebGLRenderer({antialias:true,alpha:true})}catch(e){box.innerHTML='<p class="mono" style="padding:20px;color:#8b98a9">3D view needs WebGL.</p>';return}
+R.setPixelRatio(Math.min(devicePixelRatio,2));box.appendChild(R.domElement);
+const S=new THREE.Scene(),C=new THREE.PerspectiveCamera(38,1,.1,100);C.position.set(0,8,21);C.lookAt(0,1.8,0);
+S.add(new THREE.AmbientLight(0xffffff,.65));
+const D=new THREE.DirectionalLight(0xffffff,.9);D.position.set(7,12,9);S.add(D);
+const D2=new THREE.DirectionalLight(0x58a6ff,.4);D2.position.set(-8,5,-9);S.add(D2);
+const P=new THREE.PointLight(0x3fb950,1,40);P.position.set(0,4,2);S.add(P);
+const W=new THREE.Group();S.add(W);
+const mat=(c,e,i,m)=>new THREE.MeshStandardMaterial({color:c,metalness:m===undefined?.55:m,roughness:.4,emissive:e||0,emissiveIntensity:i||.6});
+const parts={},spin=[];
+const grp=(n,o)=>{const g=new THREE.Group();g.userData.off=new THREE.Vector3(...o);W.add(g);parts[n]=g;return g};
+const bx=(g,w,h,d,m,x,y,z)=>{const o=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),m);o.position.set(x,y,z);g.add(o);return o};
+const DK=0x232a34,SV=0xaab4bf,CU=0xc08040;
+/* chassis 7U */
+const ch=grp('ch',[0,0,0]);
+bx(ch,8.2,.12,10,mat(DK),0,.06,0);bx(ch,.1,1,10,mat(DK),-4.05,.5,0);bx(ch,.1,1,10,mat(DK),4.05,.5,0);bx(ch,8.2,.9,.1,mat(DK),0,.45,-5);
+bx(ch,.5,4.4,.12,mat(0x3b4656),-4.4,2.2,5);bx(ch,.5,4.4,.12,mat(0x3b4656),4.4,2.2,5);
+[-3.5,-3.2,-2.9].forEach(x=>bx(ch,.26,.2,.12,mat(SV,0,0),x,.55,-5.05));
+const eg=new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(8.2,4.4,10)),new THREE.LineBasicMaterial({color:0x3fb950,transparent:true,opacity:.35}));eg.position.y=2.2;ch.add(eg);
+/* PSUs 4+2 (rear) */
+const ps=grp('psu',[0,0,-2.2]);for(let i=0;i<6;i++){const x=-3.4+i*1.36;bx(ps,1.2,.75,1.5,mat(0x6d4cc4,0xa371f7,.25),x,.5,-4.1);bx(ps,.9,.1,.05,mat(0x20262e),x,.5,-4.86);bx(ps,.08,.08,.05,mat(0x3fb950,0x3fb950,1),x-.4,.7,-4.88)}
+/* NICs 1:1 */
+const nc=grp('nic',[0,1.1,0]);for(let i=0;i<8;i++){const x=-3.2+i*.92;bx(nc,.72,.06,1.5,mat(0x0e7490,0x22b8cf,.3),x,.32,-2.6);bx(nc,.3,.1,.3,mat(SV,0,0),x,.4,-2.4);bx(nc,.5,.18,.06,mat(CU,0,0),x,.4,-3.3)}
+/* CPUs + DIMMs */
+const cp=grp('cpu',[0,1.4,0]),mm=grp('mem',[0,2.5,0]);
+[-2.2,2.2].forEach(c=>{bx(cp,1,.06,1,mat(0x14301f),c,.15,1.3);bx(cp,.95,.3,.95,mat(SV,0,0),c,.35,1.3);for(let f=0;f<5;f++)bx(cp,.04,.3,.9,mat(0xdfe6ee,0,0),c-.38+f*.19,.62,1.3);
+[c-.55-1.12,c+.55].forEach(st=>{for(let k=0;k<8;k++)bx(mm,.1,.5,1.1,mat(k%2?0x2563a8:0x1e4f8c,0x2563a8,.3),st+k*.14+.07,.37,1.3)})});
+/* HGX H100 GPU tray (top rear) */
+const gp=grp('gpu',[0,3.6,0]);bx(gp,7.6,.08,4.9,mat(0x0f3d24,0,0),0,1.95,-2.5);
+[-3,-.9].forEach(z=>{for(let i=0;i<4;i++){const x=-2.85+i*1.9;bx(gp,1.5,.14,1.7,mat(0x1b2a20,0x3fb950,.25),x,2.05,z);bx(gp,1.4,.08,1.6,mat(CU,0,0),x,2.16,z);for(let j=0;j<7;j++)bx(gp,.06,.75,1.55,mat(SV,0,0),x-.57+j*.19,2.58,z);bx(gp,1.2,.03,.1,mat(0x3fb950,0x3fb950,1),x,2.13,z+.88)}});
+const sw=grp('sw',[0,2.7,0]);for(let i=0;i<4;i++)bx(sw,1.1,.5,.6,mat(0x9fb8d6,0x58a6ff,.35),-2.85+i*1.9,2.25,-4.45);
+/* front fan wall */
+const fn=grp('fan',[0,0,2.2]);bx(fn,8,2.7,.15,mat(0x14181f),0,3.1,4.3);
+[2.55,3.65].forEach(y=>{for(let j=0;j<6;j++){const f=new THREE.Group();f.position.set(-3.3+j*1.32,y,4.45);f.add(new THREE.Mesh(new THREE.TorusGeometry(.5,.06,8,28),mat(0x3b4656)));
+for(let b=0;b<7;b++){const a=b*Math.PI*2/7,bl=new THREE.Mesh(new THREE.BoxGeometry(.42,.12,.03),mat(SV));bl.rotation.z=a;bl.position.set(Math.cos(a)*.22,Math.sin(a)*.22,0);f.add(bl)}
+f.add(new THREE.Mesh(new THREE.CylinderGeometry(.1,.1,.08,12).rotateX(Math.PI/2),mat(0x111418)));fn.add(f);spin.push(f)}});
+/* front NVMe bays + USB */
+const nv=grp('nvme',[0,0,3]);bx(nv,8,1.55,.2,mat(0x14181f),0,.9,4.9);
+for(let i=0;i<8;i++){const x=-3.15+i*.9;bx(nv,.8,1.3,.1,mat(0x2d343d),x,.9,5.02);bx(nv,.6,.08,.06,mat(SV,0,0),x,1.4,5.09);bx(nv,.08,.08,.04,mat(0xf0883e,0xf0883e,1),x-.3,.45,5.08)}
+for(let u=0;u<4;u++)bx(nv,.14,.08,.1,mat(0x111418),4.4,.5+u*.22,5.06);
+/* finish */
+for(const n in parts){const g=parts[n];g.userData.m=[];g.traverse(o=>{if(o.isMesh)g.userData.m.push(o.material)})}
+let k=0,kt=0,ry=-.7,rx=.32,drag=false,lx=0,ly=0,hl=null,vis=true,seen=false;
+const calm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+box.addEventListener('pointerdown',e=>{drag=true;lx=e.clientX;ly=e.clientY;box.style.cursor='grabbing'});
+['pointerup','pointercancel'].forEach(n=>addEventListener(n,()=>{drag=false;box.style.cursor='grab'}));
+addEventListener('pointermove',e=>{if(!drag)return;ry+=(e.clientX-lx)*.01;rx=Math.max(-.2,Math.min(1.1,rx+(e.clientY-ly)*.006));lx=e.clientX;ly=e.clientY});
+function rs(){const w=box.clientWidth,h=box.clientHeight;if(!w||!h)return;R.setSize(w,h,false);C.aspect=w/h;C.position.z=w/h<1.2?25:21;C.updateProjectionMatrix()}
+new ResizeObserver(rs).observe(box);rs();
+new IntersectionObserver(e=>{vis=e[0].isIntersecting;if(vis&&!seen){seen=true;setTimeout(()=>kt=1,1200)}}).observe(box);
+document.getElementById('ex').onclick=()=>kt=kt?0:1;
+document.querySelectorAll('#leg [data-p]').forEach(b=>{const g=parts[b.dataset.p];
+b.onmouseenter=()=>hl=g;b.onmouseleave=()=>hl=null;b.onclick=()=>{hl=hl===g?null:g}});
+const clk=new THREE.Clock();
+(function loop(){requestAnimationFrame(loop);if(!vis)return;const t=clk.getElapsedTime();
+k+=(kt-k)*.06;if(!drag&&!calm)ry+=.003;W.position.y=-1.2;W.rotation.set(rx,ry,0);
+for(const n in parts){const g=parts[n];g.position.copy(g.userData.off).multiplyScalar(k);
+const op=(hl&&g!==hl&&n!=='ch')?.1:1;g.userData.m.forEach(m=>{m.opacity+=(op-m.opacity)*.15;m.transparent=m.opacity<.995})}
+if(!calm)spin.forEach(f=>f.rotation.z=t*10);P.intensity=.8+Math.sin(t*2)*.3;R.render(S,C)})();
+})();
+</script>
+</body>
+</html>
